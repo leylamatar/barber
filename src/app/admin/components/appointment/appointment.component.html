@@ -17,49 +17,47 @@
           <div class="card-body">
             <button class="btn btn-icon" data-bs-toggle="modal" (click)="showAddModal()"
               data-bs-target=".create-modal"><span>Create New User</span></button>
-            <!-- <table datatable [dtOptions]="dtOptions" class="table table-striped table-bordered nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;"> -->
-            <div class="table-responsive">
 
-              <table class="table table-striped table-bordered nowrap"
-                style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                <thead>
-                  <tr>
-                    <th>Id</th>
-                    <th>full Name</th>
-                    <th>phone Number</th>
-                    <th>Email</th>
-                    <th>start Date</th>
-                    <th>end Date</th>
 
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let appointment of appointments">
-                    <td>{{ appointment.id }}</td>
-                    <td>{{ appointment.fullName }}</td>
-                    <td>{{ appointment.phoneNumber }}</td>
-                    <td>{{ appointment.email }}</td>
-                    <td>{{ appointment.startDate }}</td>
-                    <td>{{ appointment.endDate }}</td>
-                    <td>{{ appointment.isCompleted ? 'Yes' : 'No' }}</td>
+            <table class="table table-striped table-bordered nowrap"
+              style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>full Name</th>
+                  <th>phone Number</th>
+                  <th>Email</th>
+                  <th>start Date</th>
+                  <th>end Date</th>
 
-                    <!-- <button class="btn btn-icon"
-                                          data-bs-toggle="modal" (click)="showEditModal(appointment)" data-bs-target=".edit-modal"
-                                          ><span>Edit</span></button>
-                                         <button class="btn btn-icon" (click)="deleteUserById(user.id)"><span>Delete</span></button> -->
-                    <!-- <button class="btn btn-icon" [routerLink]="'/admin/users/set-credentials/'+user.id"><span>Set Credentials</span></button>
-                                          <button class="btn btn-icon" [routerLink]="'/admin/users/list-working-ranges/'+user.id"><span>Set Working Ranges</span></button> -->
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let appointment of appointments">
+                  <td>{{ appointment.id }}</td>
+                  <td>{{ appointment.fullName }}</td>
+                  <td>{{ appointment.phoneNumber }}</td>
+                  <td>{{ appointment.email }}</td>
+                  <td>{{ appointment.startDate }}</td>
+                  <td>{{ appointment.endDate }}</td>
+                  <td>{{ appointment.isCompleted ? 'Yes' : 'No' }}</td>
 
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+                  <button class="btn btn-icon" data-bs-toggle="modal" (click)="showEditModal(appointment)"
+                    data-bs-target=".edit-modal"><span>Edit</span></button>
+                  <button class="btn btn-icon"
+                    (click)="deleteAppointmentById(appointment.id)"><span>Delete</span></button>
+
+
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 <!-- end page title -->
 <app-appointment-add (onload)="getList()"></app-appointment-add>
-<!-- <app-user-update (onLoad)="getList()"></app-user-update> -->
+<app-appointment-update (onLoad)="getList()"></app-appointment-update>

@@ -1,3 +1,4 @@
+
 import { AppointmentAddComponent } from './appointment-add/appointment-add.component';
 import { AppointmentService } from './../../../services/appointment.service';
 import { CommonModule } from '@angular/common';
@@ -55,13 +56,13 @@ export class AppointmentComponent implements OnInit {
   showAddModal() {
     this.addAppointmentComponent.createCreateForm();
   }
-  // showEditModal(user:User|null){
-  //   if(user==null) return;
-  //   this.updateUserComponent.createUpdateForm(user);
-  // }
-  // deleteUserById(id:number){
-  //   this.userService.deleteById(id).subscribe(result=>{
-  //     this.getList();
-  //   })
-  // }
+   showEditModal(appointment:Appointment|null){
+     if(appointment==null) return;
+    this.updateAppointmentComponent.createUpdateForm(appointment);
+   }
+  deleteAppointmentById(id:number){
+     this.appointmentService.deleteById(id).subscribe(result=>{
+      this.getList();
+     })
+   }
 }

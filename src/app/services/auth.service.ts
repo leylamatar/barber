@@ -5,13 +5,14 @@ import { Observable } from "rxjs";
 import { DataResponse } from "../models/responses";
 import { Router } from "@angular/router";
 import { environment } from "../environments/environment";
+import { TokenResponseDto } from "../dtos/token-response-dto";
 @Injectable({providedIn:'root'})
 export class AuthService{
-    
+
     constructor(private httpClient:HttpClient){}
 
-    login(userForLoginDto:UserForLoginDto):Observable<DataResponse<string>>{
-        return this.httpClient.post<DataResponse<string>>(environment.getApiUrl("auth/login"),userForLoginDto)
+    login(userForLoginDto:UserForLoginDto):Observable<DataResponse<TokenResponseDto>>{
+        return this.httpClient.post<DataResponse<TokenResponseDto>>(environment.getApiUrl("auth/login"),userForLoginDto)
     }
     isLogin():Observable<boolean>{
         return this.httpClient.post<boolean>(environment.getApiUrl("auth/is-login"),{})

@@ -1,2 +1,50 @@
-<p>{{'home.description'|translate:({name:'ali'})}}</p>
-<button class="btn btn-success" (click)="changeLanguage()">Dil değiştir</button>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barbershop Website</title>
+</head>
+
+<body>
+  <div class="navbar">
+    <ul class="d-flex">
+      <li><a href="/admin">Admin</a></li>
+      <li><a href="/admin/services">Services</a></li>
+      <li> <a href="/admin/chat">Contact</a></li>
+    </ul>
+    <p></p>
+    <button class="btn" style="background-color: rgb(168,141,112);" (click)="changeLanguage()">Dil değiştir</button>
+  </div>
+
+  <div class="container">
+    <div class="hero">
+
+      <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active" aria-current="true"
+            aria-label="First slide"></li>
+          <li data-bs-target="#carouselId" data-bs-slide-to="1" aria-label="Second slide"></li>
+          <li data-bs-target="#carouselId" data-bs-slide-to="2" aria-label="Third slide"></li>
+        </ol>
+        <div class="carousel-inner w-100" role="listbox">
+          <div class="carousel-item active w-100">
+            <img src="/assets/images/foto2.jpeg" class="w-100 d-block" alt="First slide" />
+          </div>
+          <div class="carousel-item active w-100">
+            <img src="assets/images/foto1.jpg" class="w-100 d-block" alt="First slide" />
+          </div>
+          <div class="carousel-item active w-100">
+            <img src="assets/images/foto3.jpg" class="w-100 d-block" alt="First slide" />
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</body>
+
+</html>
